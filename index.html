@@ -100,11 +100,12 @@
             font-size: 2rem;
         }
         .carousel-control-prev:focus, .carousel-control-next:focus,
-        .carousel-control-prev:active, .carousel-control-next:active {
-            color: black; /* Keep the color the same when clicked or focused */
-            background-color: transparent; /* Ensure the background color doesn't change on focus or click */
-            box-shadow: none; /* Remove the focus shadow */
-            outline: none; /* Remove the outline when focused */
+        .carousel-control-prev:active, .carousel-control-next:active,
+        .carousel-control-prev:hover, .carousel-control-next:hover {
+            color: black; /* Keep the color the same on hover, focus, or click */
+            background-color: transparent; /* Ensure no background color change on hover */
+            box-shadow: none; /* Remove the shadow */
+            outline: none; /* Remove the outline on hover or focus */
         }
         h1 {
             color: #333;
