@@ -68,6 +68,7 @@
             height: auto;
             border-radius: 15px; /* Slightly rounded corners */
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: opacity 1s ease-in-out;
         }
         .content-container {
             display: flex;
@@ -146,6 +147,33 @@
             }
         }
     </style>
+
+    <script>
+        // JavaScript function to change the image after 3 clicks
+        let clickCount = 0;
+
+        function changeImage() {
+            if (++clickCount === 3) {
+                var img = document.getElementById('image'); // Get the image by id
+
+                // Fade out the image
+                img.style.opacity = 0;
+
+                // Change the image source after a short delay (to allow fade-out effect)
+                setTimeout(function() {
+                    if (img.src.includes('Andii')) {
+                        img.src = 'Chamchi.jpg'; 
+                    } else {
+                        img.src = 'Andii.png'; 
+                    }
+                    
+                    img.style.opacity = 1; // Fade the image back in
+                }, 1000); // Matches the fade-out duration (1 second)
+
+                clickCount = 0;
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="container text-center">
@@ -155,7 +183,7 @@
 
         <!-- Image container -->
         <div class="image-container">
-            <img src="Andii.png" class="img-fluid" alt="Andii, Chamchi, & Tuna :3">
+            <img id="image" src="Andii.png" class="img-fluid" alt="Andii, Chamchi, & Tuna :3" onclick="changeImage()">
         </div>
     </div>
 
